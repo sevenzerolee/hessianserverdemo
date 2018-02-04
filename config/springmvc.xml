@@ -43,5 +43,14 @@
 			value="org.sevenzerolee.hessiandemo.hessian.HelloSpi" />
 	</bean> 
 	
+	<bean id="worldSpiImpl" class="org.sevenzerolee.hessiandemo.hessian.impl.WorldSpiImpl" />
+	
+	<bean name="/world"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="worldSpiImpl" />
+		<property name="serviceInterface"
+			value="org.sevenzerolee.hessiandemo.hessian.WorldSpi" />
+	</bean> 
+	
 	 
 </beans>
